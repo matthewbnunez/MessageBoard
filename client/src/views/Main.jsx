@@ -4,7 +4,7 @@ import PostForm from '../components/PostForm';
 import DisplayPosts from '../components/DisplayPosts';
 import axios from 'axios'
 
-const Main = () => {
+const Main = (props) => {
     const [posts, setPosts] = useState([]);
     const [loaded, setLoaded] = useState(false);
     
@@ -17,11 +17,15 @@ const Main = () => {
             .catch(err => console.error(err));
     },[]);
 
+    const removeFromDom = postId => {
+        setPosts(posts.filter(post => post._id !== postId));
+    }
+
     return (
         <div className="App">
-            {/* <UserForm /> */}
+            <UserForm />
             <PostForm />
-            {loaded && <DisplayPosts posts={posts}/>}
+            {loaded && <DisplayPosts posts={posts} removeFromDom={removeFromDom}/>}
 
         </div>
     )

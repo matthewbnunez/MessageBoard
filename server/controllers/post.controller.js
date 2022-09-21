@@ -1,5 +1,4 @@
 const { Post } = require('../models/post.model');
-const { User } = require("../models/user.model")
 
 module.exports.allPosts = (req, res) => {
     Post.find()
@@ -22,4 +21,10 @@ module.exports.addPost = (request, response) => {
     })
         .then(user => response.json(user))
         .catch(err => response.status(400).json(err));
+}
+
+module.exports.deletePost = (request, response) => {
+    Post.deleteOne({ _id: request.params.id })
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
 }
