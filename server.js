@@ -3,8 +3,6 @@ const cors = require('cors')
 const app = express();
 const port = 8000;
 require('dotenv').config();
-const jwt = require("jsonwebtoken");
-const cookieParser = require('cookie-parser');
 
 // config mongoose
 require('./server/config/mongoose.config');
@@ -17,7 +15,6 @@ app.use(cors( {
 //POST method
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser()); //this is new, to use with cookie
 
 //routes
 require('./server/routes/user.routes')(app);

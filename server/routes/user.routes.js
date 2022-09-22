@@ -1,6 +1,5 @@
 const UserController = require('../controllers/user.controller');
 const PostController = require('../controllers/post.controller');
-const {authenticate} = require('../config/jwt.config')
 
 module.exports = function(app){
     app.get('/api', UserController.index);
