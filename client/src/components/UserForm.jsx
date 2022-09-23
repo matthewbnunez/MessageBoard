@@ -23,14 +23,15 @@ const UserForm = () => {
     }
     //onChange to update firstName and lastName
     return (
+        <div className="form-group">
         <form onSubmit={onSubmitHandler}>
             <p>
                 <label>First Name</label><br/>
-                <input type="text" onChange={(e)=>setFirstName(e.target.value)} value={firstName}/>
+                <input className="form-control" type="text" onChange={(e)=>setFirstName(e.target.value)} value={firstName}/>
             </p>
             <p>
                 <label>Last Name</label><br/>
-                <input type="text" onChange={(e)=>setLastName(e.target.value)} value={lastName}/>
+                <input className="form-control" type="text" onChange={(e)=>setLastName(e.target.value)} value={lastName}/>
             </p>
             <p>
                 <label>Email</label><br/>
@@ -38,10 +39,11 @@ const UserForm = () => {
             </p>
             <p>
                 <label>Password</label><br/>
-                <input type="password" onChange={(e)=>setPassword(e.target.value)} value={password}/>
+                <input className="form-control" type="text" onChange={(e)=>setPassword(e.target.value)} value={password}/>
             </p>
-            <input type="submit"/>
+            <button type='submit' className="btn btn-success">Submit</button>
         </form>
+        </div>
     )
 }
 

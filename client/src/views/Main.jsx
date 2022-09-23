@@ -21,7 +21,8 @@ const Main = () => {
     }
 
     return (
-        <div className="App">
+        <div>
+            <h1 className="text-center">The best message board in the world</h1>
             <UserForm />
             {loaded && <DisplayUsers users={users} removeFromDom={removeFromDom}/>}
         </div>

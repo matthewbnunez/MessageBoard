@@ -9,9 +9,10 @@ require('./server/config/mongoose.config');
 
 //config express
 app.use(cors( {
-    // credentials: true,
-    // origin:'http://localhost:3000'
+    credentials: true,
+    origin:'http://localhost:3000'
 }))
+
 //POST method
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
