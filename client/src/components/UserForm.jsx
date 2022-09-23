@@ -39,7 +39,7 @@ const UserForm = () => {
             </p>
             <p>
                 <label>Password</label><br/>
-                <input className="form-control" type="text" onChange={(e)=>setPassword(e.target.value)} value={password}/>
+                <input className="form-control" type="password" onChange={(e)=>setPassword(e.target.value)} value={password}/>
             </p>
             <button type='submit' className="btn btn-success">Submit</button>
         </form>
