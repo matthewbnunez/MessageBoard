@@ -7,12 +7,12 @@ module.exports.index = (request, response) => {
 }
 
 module.exports.createUser = (request, response) => {
-    const { firstName, lastName, email, password, posts } = request.body;
+    const { firstName, lastName, email, posts } = request.body;
     User.create({
         firstName,
         lastName,
         email,
-        password,
+        // password,
         posts
     })
         .then(user => response.json(user))

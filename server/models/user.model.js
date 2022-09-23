@@ -20,11 +20,11 @@ const UserSchema = new Schema({
             message: "Please enter a valid email"
         }
     },
-    password: { 
-        type: String,
-        required: [true, "Password is required"],
-        minlength: [8, "Password must be at least 8 characters"]
-    },
+    // password: { 
+    //     type: String,
+    //     required: [true, "Password is required"],
+    //     minlength: [8, "Password must be at least 8 characters"]
+    // },
     posts:[{
         type: Schema.Types.ObjectId,
         ref: 'Post'

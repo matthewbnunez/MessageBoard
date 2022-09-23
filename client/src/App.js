@@ -7,7 +7,7 @@ import DetailUser from './views/DetailUser';
 function App() {
 
     return (
-        <div className="App">
+        <div className="container mt-1">
             <Routes>
                 <Route element={<Main />} path="/" />
                 <Route element={<DetailUser />} path="/users/:id" />

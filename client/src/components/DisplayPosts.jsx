@@ -17,7 +17,7 @@ const DisplayPosts = (props) => {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                        <th>User</th>
+                        <th>User ID</th>
                         <th>Message</th>
                         <th>Actions</th>
                     </tr>
@@ -28,7 +28,9 @@ const DisplayPosts = (props) => {
                             <tr key={i}>
                                 <td>{post.user}</td>
                                 <td>{post.content}</td>
-                                <button className="btn btn-outline-warning" onClick={(e) => { deletePost(post._id) }}>Delete</button>
+                                <td>
+                                    <button className="btn btn-outline-warning" onClick={(e) => { deletePost(post._id) }}>Delete</button>
+                                </td>
                             </tr>
                         ))
                     }
