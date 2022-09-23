@@ -26,8 +26,10 @@ module.exports.addPost = async(req, res) => {
             {$push : {posts : newPost}},
             {new: true}
             )
+            console.log(req.params.userId)
         res.json(updatedUser)
     }catch(err){
+        console.log(err)
         res.status(400).json(err)
     }
 }

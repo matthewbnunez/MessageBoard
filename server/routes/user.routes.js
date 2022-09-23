@@ -12,7 +12,7 @@ module.exports = function(app){
 
     app.get("/api/users/:userId/posts", UserController.getAllPosts);
     app.get("/api/posts/:id", PostController.postsOfOneUser);
-    app.post("/api/posts/:id", PostController.addPost);
+    app.post("/api/posts/:userId", PostController.addPost);
     app.get("/api/posts", PostController.allPosts);
     app.delete('/api/posts/:id', PostController.deletePost);
 
