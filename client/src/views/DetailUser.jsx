@@ -13,7 +13,7 @@ const DetailUser = () => {
         axios.get(`http://localhost:8000/api/users/${id}`)
             .then(res => setUser(res.data))
             .catch(err => console.error(err));
-    }, []);
+    }, [id]);
 
     const removeFromDom = postId => {
         SetPost(posts.filter(post => post._id !== postId));

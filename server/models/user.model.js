@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     firstName: { 
         type: String,
         required: [true, "First Name is required"],
@@ -23,7 +24,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Password is required"],
         minlength: [8, "Password must be at least 8 characters"]
-    }
+    },
+    posts:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+    }]
 }, { timestamps: true });
 
 // //validator to check password and confirmpasswword

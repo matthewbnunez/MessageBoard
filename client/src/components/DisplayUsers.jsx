@@ -7,7 +7,7 @@ const DisplayUsers = (props) => {
     const { removeFromDom } = props;
     
     const deletePost = (userId) => {
-        axios.delete(`http://localhost:8000/api/user/${userId}`)
+        axios.delete(`http://localhost:8000/api/users/${userId}`)
             .then(res => {
                 removeFromDom(userId)
             })

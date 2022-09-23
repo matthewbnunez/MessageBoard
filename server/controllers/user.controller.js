@@ -7,12 +7,13 @@ module.exports.index = (request, response) => {
 }
 
 module.exports.createUser = (request, response) => {
-    const { firstName, lastName, email, password } = request.body;
+    const { firstName, lastName, email, password, posts } = request.body;
     User.create({
         firstName,
         lastName,
         email,
-        password
+        password,
+        posts
     })
         .then(user => response.json(user))
         .catch(err => response.status(400).json(err));
@@ -40,4 +41,10 @@ module.exports.deleteUser = (request, response) => {
     User.deleteOne({ _id: request.params.id })
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch(err => response.status(400).json(err))
+}
+
+module.exports.getAllPosts = (req, res) => {
+    User.findOne({_id: req.params.userId}).populate('posts')
+        .then(foundUser=>res.json(foundUser))
+        .catch(err=>res.status(400).json(err))
 }
