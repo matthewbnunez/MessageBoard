@@ -14,13 +14,28 @@ const DisplayPosts = (props) => {
 
     return (
         <div>
-            {props.posts.map((post, i) =>
-                <p key={i}>{post.user}, {post.content}
-                    <button onClick={(e) => { deletePost(post._id) }}>
-                        Delete
-                    </button>
-                </p>
-            )}
+            <table className = "table table-hover">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    props.posts.map((post, i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{post.user}</td>
+                                <td>{post.content}</td>
+                                <button className="btn btn-outline-warning" onClick={(e) => { deletePost(post._id) }}>Delete</button>
+                            </tr>
+                        )
+                    })
+                }
+            </tbody>
+            </table>
         </div>
     )
 }
