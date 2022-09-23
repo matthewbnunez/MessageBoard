@@ -10,7 +10,7 @@ const DetailUser = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/users/${id}`)
+        axios.get(`http://localhost:8000/api/users/${id}/posts`)
             .then(res => {
                 console.log(res.data)
                 setUser(res.data)
