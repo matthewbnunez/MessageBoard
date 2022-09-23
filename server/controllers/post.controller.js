@@ -1,4 +1,6 @@
 const { Post } = require('../models/post.model');
+const { User } = require("../models/user.model")
+
 
 module.exports.allPosts = (req, res) => {
     Post.find()
@@ -37,15 +39,3 @@ module.exports.deletePost = (request, response) => {
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch(err => response.json(err))
 }
-
-// module.exports.getPost = (request, response) => {
-//     Post.findOne({ _id: request.params.id })
-//         .then(post => response.json(post))
-//         .catch(err => response.status(400).json(err))
-// }
-
-// module.exports.updatePost = (request, response) => {
-//     Post.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true })
-//         .then(updatedPost => response.json(updatedPost))
-//         .catch(err => response.status(400).json(err))
-// }

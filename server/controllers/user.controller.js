@@ -32,7 +32,7 @@ module.exports.getUser = (request, response) => {
 }
 
 module.exports.updateUser = (request, response) => {
-    User.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+    User.findOneAndUpdate({_id: request.params.id}, request.body, {new:true, runValidators:true})
         .then(updatedUser => response.json(updatedUser))
         .catch(err => response.status(400).json(err))
 }

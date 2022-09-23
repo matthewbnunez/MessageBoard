@@ -32,7 +32,7 @@ const DisplayUsers = (props) => {
                             <tr key={i}>
                                 <td><Link to={`/users/${user._id}`}>{user.firstName}, {user.lastName}</Link></td>
                                 <td>{user.email}</td>
-                                <td>{user.password}</td>
+                                <td>{user.password}</td>    
                                 <td>
                                     <button className="btn btn-outline-warning" onClick={(e) => { deletePost(user._id) }}>
                                         Delete

@@ -14,8 +14,6 @@ module.exports = function(app){
     app.get("/api/posts/:id", PostController.postsOfOneUser);
     app.post("/api/posts/:id", PostController.addPost);
     app.get("/api/posts", PostController.allPosts);
-    // app.get('/api/posts/:id', PostController.getPost);
-    // app.put('/api/posts/:id', PostController.updatePost);
     app.delete('/api/posts/:id', PostController.deletePost);
 
 }
