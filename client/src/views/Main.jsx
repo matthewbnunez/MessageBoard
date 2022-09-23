@@ -22,11 +22,11 @@ const Main = (props) => {
     }
 
     return (
-        <div className="App">
+        <div>
+            <h1 className="text-center">The best message board in the world</h1>
             <UserForm />
             <PostForm />
             {loaded && <DisplayPosts posts={posts} removeFromDom={removeFromDom}/>}
-
         </div>
     )
 }

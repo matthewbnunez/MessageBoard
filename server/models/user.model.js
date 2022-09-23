@@ -1,9 +1,4 @@
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-const bcrypt = require('bcrypt');
-=======
-// const bcrypt = require('bcrypt');
->>>>>>> e5d882b28328483f3468720bc2d754ac8efd386a
 
 const UserSchema = new mongoose.Schema({
     userName: { 
@@ -35,23 +30,6 @@ const UserSchema = new mongoose.Schema({
         minlength: [8, "Password must be at least 8 characters"]
     }
 }, { timestamps: true });
-
-//validator to check password and confirmpasswword
-UserSchema.pre('validate', function(next){
-    if(this.password !== this.get('confirmPassword')){
-        this.invalidate('confirmPassword', 'Password must match confirm password')
-    }
-    next()
-})
-
-//saving password hash with bcrypt
-UserSchema.pre('save', function(next) {
-    bcrypt.hash(this.password, 10)
-        .then(hash => {
-        this.password = hash;
-        next();
-        });
-});
 
 module.exports.User = mongoose.model('User', UserSchema);
 
