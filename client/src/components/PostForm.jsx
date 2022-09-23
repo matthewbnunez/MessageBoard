@@ -1,25 +1,22 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const PostForm = () => {
-    const [user, setUser] = useState('')
+const PostForm = (props) => {
     const [content, setContent] = useState('')
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post(`http://localhost:8000/api/posts`, {user, content})
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err))
+        axios.post(`http://localhost:8000/api/posts/${props.userId}`, {
+            content, 
+            user: props.userId
+        })
+            .then(res=>console.log("success"))
+            .catch(err=>console.log("failed"))
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>User</label>
-                    <input type="text" name="user" value={user}
-                        onChange={e => setUser(e.target.value)} className="form-control" />
-                </div>
                 <div>
                     <label>Content</label>
                     <input type="text" name="content" value={content}
