@@ -20,7 +20,6 @@ module.exports.addPost = async(req, res) => {
         const newPost = new Post(req.body)
         newPost.user = req.params.userId
         await newPost.save()
-    
         // pushing the newly added comment into Job
         const updatedUser = await User.findOneAndUpdate(
             {_id:req.params.userId},
@@ -31,7 +30,6 @@ module.exports.addPost = async(req, res) => {
     }catch(err){
         res.status(400).json(err)
     }
-
 }
 
 module.exports.deletePost = (request, response) => {

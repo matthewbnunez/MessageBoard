@@ -31,7 +31,6 @@ const DetailUser = () => {
                         <p>Last Name: {user.lastName}</p>
                         <p>Email: {user.email}</p>
                         <p>Password: {user.password}</p>
-                        <p>Posts: {user.posts}</p>
                         <PostForm userId={id} />
                         <DisplayPosts posts={user.posts} removeFromDom={removeFromDom} />
                     </div> :
