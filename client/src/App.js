@@ -1,11 +1,17 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Main from './views/Main';
+import DetailUser from './views/DetailUser';
+
 
 function App() {
 
     return (
         <div className="App">
-            <Main />
+            <Routes>
+                <Route element={<Main />} path="/" />
+                <Route element={<DetailUser />} path="/users/:id" />
+            </Routes>
         </div>
     );
 }

@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import UserForm from '../components/UserForm';
-import PostForm from '../components/PostForm';
-import DisplayPosts from '../components/DisplayPosts';
+import DisplayUsers from '../components/DisplayUsers';
 import axios from 'axios'
 
-const Main = (props) => {
-    const [posts, setPosts] = useState([]);
+const Main = () => {
+    const [users, setUsers] = useState([]);
     const [loaded, setLoaded] = useState(false);
     
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/posts')
+        axios.get('http://localhost:8000/api/users')
             .then(res=>{
-                setPosts(res.data);
+                setUsers(res.data);
                 setLoaded(true);
             })
             .catch(err => console.error(err));
     },[]);
 
-    const removeFromDom = postId => {
-        setPosts(posts.filter(post => post._id !== postId));
+    const removeFromDom = userId => {
+        setUsers(users.filter(user => user._id !== userId));
     }
 
     return (
         <div className="App">
             <UserForm />
-            <PostForm />
-            {loaded && <DisplayPosts posts={posts} removeFromDom={removeFromDom}/>}
-
+            {loaded && <DisplayUsers users={users} removeFromDom={removeFromDom}/>}
         </div>
     )
 }

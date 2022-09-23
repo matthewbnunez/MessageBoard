@@ -6,11 +6,11 @@ module.exports.index = (request, response) => {
 }
 
 module.exports.createUser = (request, response) => {
-    const { firstName, lastName } = request.body;
+    const { firstName, lastName, email, password } = request.body;
     User.create({
-        userName,
         firstName,
         lastName,
+        email,
         password
     })
         .then(user => response.json(user))

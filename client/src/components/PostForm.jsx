@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const PostForm = () => {
+const PostForm = (props) => {
     const [user, setUser] = useState('')
     const [content, setContent] = useState('')
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post(`http://localhost:8000/api/posts`, {user, content})
+        axios.post(`http://localhost:8000/api/posts/${props.userId}`, {
+            user, 
+            content, 
+            user: props.userId
+        })
             .then(res=>console.log(res))
             .catch(err=>console.log(err))
     }
