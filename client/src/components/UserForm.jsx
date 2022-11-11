@@ -26,8 +26,7 @@ const UserForm = () => {
                 for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
                     errorArr.push(errorResponse[key].message)
                 }
-                // Set Errors
-                setErrors(errorArr);
+                setErrors(errorArr); // Set Errors
             })
     }
     //onChange to update firstName and lastName
