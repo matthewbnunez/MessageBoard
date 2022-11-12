@@ -8,11 +8,11 @@ const UserForm = () => {
     const [email, setEmail] = useState("");
     const [errors, setErrors] = useState([]);
     // const [password, setPassword] = useState("");
-    //handler when the form is submitted
+    // handler when the form is submitted
     const onSubmitHandler = e => {
-        //prevent default behavior of the submit
+        // prevent default behavior of the submit
         e.preventDefault();
-        //make a post request to create a new person
+        // make a post request to create a new person
         axios.post('http://localhost:8000/api/users', {
             firstName,
             lastName,
@@ -29,7 +29,7 @@ const UserForm = () => {
                 setErrors(errorArr); // Set Errors
             })
     }
-    //onChange to update firstName and lastName
+    // onChange to update firstName and lastName
     return (
         <div className="form-group">
             <form onSubmit={onSubmitHandler}>
