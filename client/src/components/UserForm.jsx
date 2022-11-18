@@ -8,6 +8,7 @@ const UserForm = () => {
     const [email, setEmail] = useState("");
     const [errors, setErrors] = useState([]);
     // const [password, setPassword] = useState("");
+    
     // handler when the form is submitted
     const onSubmitHandler = e => {
         // prevent default behavior of the submit
