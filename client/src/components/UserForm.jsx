@@ -47,10 +47,12 @@ const UserForm = () => {
                     <label>Email</label><br />
                     <input className="form-control" type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
                 </p>
-                {/* <p>
-                <label>Password</label><br/>
-                <input className="form-control" type="password" onChange={(e)=>setPassword(e.target.value)} value={password}/>
-            </p> */}
+                {
+                /* <p>
+                    <label>Password</label><br/>
+                    <input className="form-control" type="password" onChange={(e)=>setPassword(e.target.value)} value={password}/>
+                </p> */
+                }
                 <button type='submit' className="btn btn-success">Submit</button>
             </form>
         </div>
