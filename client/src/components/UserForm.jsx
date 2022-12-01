@@ -30,7 +30,7 @@ const UserForm = () => {
                 setErrors(errorArr); // Set Errors
             })
     }
-    // onChange to update firstName and lastName
+    // onChange to update firstName, lastName, and email
     return (
         <div className="form-group">
             <form onSubmit={onSubmitHandler}>
