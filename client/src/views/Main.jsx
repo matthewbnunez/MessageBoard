@@ -22,7 +22,7 @@ const Main = () => {
 
     return (
         <div>
-            <h1 className="text-center">The best message board in the world</h1>
+            <h1 className="text-center">The Worlds message board</h1>
             <UserForm />
             {loaded && <DisplayUsers users={users} removeFromDom={removeFromDom}/>}
         </div>
